@@ -35,10 +35,22 @@ h1 {
     margin-bottom: 10px;
 }
 
-.session-counter {
+.description {
     color: #5a6c7d;
     font-size: 1rem;
     font-weight: 400;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.session-counter {
+    color: #5a6c7d;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* Main content */
