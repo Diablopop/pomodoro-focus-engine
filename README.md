@@ -40,3 +40,4 @@ A clean, minimal Pomodoro timer web application that helps you stay focused and 
 ## Browser Support
 
 Works in all modern browsers including Chrome, Firefox, Safari, and Edge.
+
