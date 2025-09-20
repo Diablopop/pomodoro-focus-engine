@@ -1,0 +1,345 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: white;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.session-counter {
+    color: #5a6c7d;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Timer Section */
+.timer-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.timer-display {
+    margin-bottom: 30px;
+}
+
+.timer {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
+}
+
+.timer-label {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    min-width: 100px;
+}
+
+.btn-primary {
+    background: #34495e;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #2c3e50;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 73, 94, 0.3);
+}
+
+.btn-secondary {
+    background: #34495e;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #2c3e50;
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Task Section */
+.task-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-input {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    min-width: 200px;
+}
+
+.task-input input:focus {
+    outline: none;
+    border-color: #34495e;
+}
+
+.task-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-selection label {
+    font-weight: 500;
+    color: #333;
+}
+
+.task-selection select {
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.task-selection select:focus {
+    outline: none;
+    border-color: #34495e;
+}
+
+/* Break Option */
+.break-option {
+    background: #f8f9fa;
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.break-option.hidden {
+    display: none;
+}
+
+.break-prompt p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.break-prompt .btn {
+    margin: 0 10px;
+}
+
+/* History Section */
+.history-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.history-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #34495e;
+}
+
+.history-item .task-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.history-item .task-time {
+    color: #34495e;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.no-history {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px 20px;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .timer {
+        font-size: 3rem;
+    }
+    
+    .timer-section {
+        padding: 30px 20px;
+    }
+    
+    .task-section,
+    .history-section,
+    .break-option {
+        padding: 20px;
+    }
+    
+    .task-input {
+        flex-direction: column;
+    }
+    
+    .task-input input {
+        min-width: auto;
+    }
+    
+    .timer-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .break-prompt .btn {
+        margin: 5px 0;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer {
+        font-size: 2.5rem;
+    }
+    
+    .timer-label {
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animation for timer changes */
+.timer-updating {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Focus state for accessibility */
+.btn:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #34495e;
+    outline-offset: 2px;
+}

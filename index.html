@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pomodoro Focus Timer</h1>
+            <div class="session-counter">
+                <span>Sessions completed: </span>
+                <span id="session-count">0</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Timer Section -->
+            <section class="timer-section">
+                <div class="timer-display">
+                    <div id="timer" class="timer">25:00</div>
+                    <div id="timer-label" class="timer-label"></div>
+                </div>
+                
+                <div class="timer-controls">
+                    <button id="start-btn" class="btn btn-primary">Start</button>
+                    <button id="stop-btn" class="btn btn-secondary" disabled>Stop</button>
+                    <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Task Management Section -->
+            <section class="task-section">
+                <div class="task-input">
+                    <input type="text" id="task-input" placeholder="Enter task name..." maxlength="50">
+                    <button id="add-task-btn" class="btn btn-primary">Add Task</button>
+                </div>
+                
+                <div class="task-selection">
+                    <label for="task-select">Select Task:</label>
+                    <select id="task-select">
+                        <option value="">Choose a task...</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Break Option (shown after 4 sessions) -->
+            <section id="break-option" class="break-option hidden">
+                <div class="break-prompt">
+                    <p>You've completed 4 focus sessions! Would you like to take a 15-minute break?</p>
+                    <button id="long-break-btn" class="btn btn-primary">Take Long Break</button>
+                    <button id="skip-break-btn" class="btn btn-secondary">Skip</button>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="history-section">
+                <h2>Recent Tasks (Last 5 Days)</h2>
+                <div id="history-list" class="history-list">
+                    <p class="no-history">No tasks completed yet. Start your first Pomodoro session!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Audio element for chime -->
+    <audio id="chime" preload="auto">
+        <source src="chime.mp3" type="audio/mpeg">
+        <source src="chime.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
